@@ -62,18 +62,51 @@ void display(struct array ar)
     for (i = 0; i < ar.length; i++)
         std::cout << ar.a[i] << "\n";
 }
+void revers1(struct array *ara) // luxury array function
+{
+    int *b;
+    b = (int*)malloc(ara->length * sizeof(int));
+    int i, j;
+    for (i = ara->length - 1, j = 0; i >= 0; i--, j++)
+    {
+        b[j] = ara->a[i];
+    }
+    for (i = 0; i<ara->length; i++)
+    {
+        ara->a[i] = b[i];
+    }
+}
+void swap(int* x, int* y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+void revers2(struct array* ara) // luxury array function
+{
+
+    int i, j;
+    for (i = 0, j = ara->length - 1; i < ara->length; i++, j--)
+        swap(&ara->a[i], &ara->a[j]);
+}
 
 int main()
 {
     struct array arr = { {34,25,45,23,67,78,9},7,20 };
     std::cout<<"passing index value is = " << get(arr, 2); std::cout << "\n";
      set(&arr, 2,455);
-     std::cout << "new array after setting replcing value  is = ";
+     std::cout << "new array after setting replcing value  is = "<<"\n";
      display(arr);
      std::cout << "maximum is =" << max(arr)<<"\n";
      std::cout << "minimum is =" << min(arr) << "\n";
      std::cout << "sum  is =" << sum(arr) << "\n";
      std::cout << "averge is =" << avg(arr) << "\n";
+     revers1(&arr);
+     std::cout << "new array after  reversing by luxury array function value  is = "<<"\n";
+     display(arr);
+     revers2(&arr);
+     std::cout << "new array after  reversing by swaping  value  is = " << "\n";
+     display(arr);
 
 
 }
