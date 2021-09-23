@@ -73,7 +73,7 @@ int main()
 }   */
 #include <iostream>
 //using namespace std;
-template <class T>
+template <class T>  //template class used for every kind of datatype....
 class array
 {
 private:
