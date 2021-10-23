@@ -6,24 +6,28 @@
 int main()
 {
 	
-		int array[10] = { 2,4,6,7,11,13,15,18,19,20 };
+	int array[10];// = { 2,4,6,7,11,13,15,18,19,20 };
 		int i;
 		
-
+		for (i = 0; i < 10; i++)
+		{
+			std::cout << "enter" << i + 1 << "element" << "\n";
+			std::cin >> array[i];
+		}
 		int max = array[0];
 		int min = array[0];
 
 		for (i = 1; i < 10; i++)
 		{
-        	if (min < array[i])
+        	if (min > array[i])
 			{
 				min = array[i];
 			}
-			else if (max > array[i])
+			else if (max < array[i])
 				max = array[i];
 			}
 
-		std::cout << "maximum is = "  << max<<"\n" << "minimum is = " << min;
+		std::cout << "maximum is = "  << max<<"\n;" << "minimum is = " << min;
 	
 }
 
