@@ -6,6 +6,7 @@
 int main()
 {
     char name[] = "john";
+    int vcount =0,ccount=0; int wcount = 1;
     std::cout <<"length of string is"<< strlen(name) << "\n";
     for (int i = 0; name[i] != '\0'; i++)
     {
@@ -13,7 +14,7 @@ int main()
     }
     std::cout << name << "\n";
 
-    char toggle[] = "JaWadAhMed";
+    char toggle[] = "JaWadAhMed how are you jnab";
     for (int i = 0; toggle[i] != '\0'; i++)
     {
         if (toggle[i] >= 65 && toggle[i] <= 90)
@@ -26,9 +27,23 @@ int main()
         }
    
     }
+   
+    for (int i = 0; toggle[i] != '\0'; i++)
+    {
+        if (toggle[i] == 'a' || toggle[i] == 'e' || toggle[i] == 'i' || toggle[i] == 'o' || toggle[i] == 'u' || toggle[i] == 'A' || toggle[i] == 'E' || toggle[i] == 'I' || toggle[i] == 'O' || toggle[i] == 'U')
+            vcount++;
+        else if (toggle[i] >= 65 && toggle[i] <= 90 || toggle[i] >= 97 && toggle[i] <= 122)
+            ccount++;
+    }
+
+    for (int i = 0; toggle[i] != '\0'; i++)
+    {
+        if (toggle[i] == ' ' && toggle[i - 1] != ' ')
+            wcount++;
+    }
     std::cout << "after toggle case \n " << toggle<<"\n";
 
-    std::cout << "Hello World!\n";
+    std::cout <<"vowel count are"<<vcount<<"\n"<<"consent count are"<<ccount<<"\n"<<"total words in string are"<<wcount;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
